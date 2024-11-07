@@ -1,10 +1,12 @@
 function! FindWord(word)
-    "" 不要高亮
-    echo a:word
     "" 跳到单词
-    call search(a:word)
-    "" 移动到单词尾部
-    normal! e
+    let l:result =  search(a:word)
+    if l:result == 0
+       echo "找不到匹配!"
+    else
+        normal! e
+        echo a:word
+    end
 endfunction
 
 " 定义命令
