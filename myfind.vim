@@ -2,12 +2,13 @@ function! FindWord(word)
   " 查找单词找不到就报错
   let l:count = search(a:word, 'w')
   if l:count > 0
-    echo '找到 ' . l:count . ' 个匹配项'
+    "" 不要高亮
     :set nohlsearch
+    "" 跳到单词
     execute 'silent /' . a:word
     :set hlsearch
-    normal! e
     "" 移动到单词尾部
+    normal! e
   else
     echo '没有找到匹配项'
   endif
