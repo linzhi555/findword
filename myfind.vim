@@ -15,4 +15,4 @@ endfunction
 
 " 定义命令
 command! -nargs=1 FindWord call FindWord(<f-args>)
-nnoremap <F12> :FindWord<space>
+nnoremap <F5> :FindWord<space>
